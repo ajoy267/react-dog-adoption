@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route path="/dogs" exact>
+          <Route path="/" exact>
             <Dogs />
           </Route>
           <Route path="/dogs/:id" exact>
