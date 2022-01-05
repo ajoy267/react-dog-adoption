@@ -4,21 +4,21 @@ exports[`should render an individual dog 1`] = `
 <div>
   <div>
     <div>
-      <h1>
-        Barton
-      </h1>
+      <h2>
+        Franny
+      </h2>
       <img
-        src="https://placedog.net/500?id=6"
+        src="https://placedog.net/500?id=51"
       />
       <p>
-        Barton
+        Franny
          is a(n) 
-        1
+        4
          year old 
-        Weimaraner
+        French Bulldog
       </p>
       <p>
-        Adores every person he meets. Very social and lots of energy
+        Sweet Frenchie with lots of love to give.
       </p>
     </div>
   </div>
