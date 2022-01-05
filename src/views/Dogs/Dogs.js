@@ -15,7 +15,7 @@ export default function Dogs() {
       setDogs(resp);
       timer = setTimeout(() => {
         setLoading(false);
-      }, 1500);
+      }, 750);
     };
     if (loading) {
       getDogs();
