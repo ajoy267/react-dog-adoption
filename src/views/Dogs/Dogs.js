@@ -29,7 +29,6 @@ export default function Dogs() {
       {loading && <div className="loader"></div>}
       {!loading && (
         <div>
-          <h1>Dogs</h1>
           <DogList dogs={dogs} />
         </div>
       )}
