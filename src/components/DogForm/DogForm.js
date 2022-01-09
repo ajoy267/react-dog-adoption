@@ -12,6 +12,7 @@ export default function DogForm({
   bio,
   setBio,
   handleSubmit,
+  handleDelete,
 }) {
   return (
     <div className="dog-form">
@@ -51,7 +52,7 @@ export default function DogForm({
           />
         </div>
         <div className="form-control">
-          <label>breed:</label>
+          <label>Breed:</label>
           <input
             placeholder="Breed"
             type="text"
@@ -73,6 +74,9 @@ export default function DogForm({
         </div>
         <div>
           <button onClick={handleSubmit}>Save</button>
+        </div>
+        <div>
+          <button onClick={handleDelete}>Delete</button>
         </div>
       </form>
     </div>

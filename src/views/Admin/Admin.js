@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DogForm from '../../components/DogForm/DogForm';
-import { createDog } from '../../services/dog';
+import { createDog, deleteDog } from '../../services/dog';
 
 export default function Admin() {
   const [name, setName] = useState('');
@@ -18,6 +18,10 @@ export default function Admin() {
       alert('Database request has failed, please try again.');
     }
   };
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    await deleteDog(name, image, age, breed, bio);
+  };
 
   return (
     <div>
@@ -33,6 +37,7 @@ export default function Admin() {
         bio={bio}
         setBio={setBio}
         handleSubmit={handleSubmit}
+        handleDelete={handleDelete}
       />
     </div>
   );

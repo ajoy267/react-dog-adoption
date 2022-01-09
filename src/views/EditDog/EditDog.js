@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import DogForm from '../../components/DogForm/DogForm';
-import { fetchDogById, updateDog } from '../../services/dog';
+import { deleteDog, fetchDogById, updateDog } from '../../services/dog';
 
 export default function EditDog() {
   const [name, setName] = useState('');
@@ -27,6 +27,11 @@ export default function EditDog() {
     e.preventDefault();
     await updateDog(params.id, name, image, age, breed, bio);
   };
+
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    await deleteDog(params.id, name, image, age, breed, bio);
+  };
   return (
     <div>
       <h1>Edit Dog</h1>
@@ -42,6 +47,7 @@ export default function EditDog() {
         bio={bio}
         setBio={setBio}
         handleSubmit={handleSubmit}
+        handleDelete={handleDelete}
       />
     </div>
   );
