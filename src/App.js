@@ -4,6 +4,7 @@ import Dogs from './views/Dogs/Dogs';
 import Dog from './views/Dog/Dog';
 import Header from './components/Header/Header';
 import Admin from './views/Admin/Admin';
+import EditDog from './views/EditDog/EditDog';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/dogs/:id" exact>
             <Dog />
+          </Route>
+          <Route path="/dogs/:id/edit" exact>
+            <EditDog />
           </Route>
         </Switch>
       </BrowserRouter>
