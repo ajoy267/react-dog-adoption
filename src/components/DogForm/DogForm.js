@@ -1,6 +1,8 @@
 import React from 'react';
 
 export default function DogForm({
+  id,
+  setId,
   name,
   setName,
   image,
@@ -18,6 +20,17 @@ export default function DogForm({
     <div className="dog-form">
       <form>
         <h2>Dog Details</h2>
+        <div className="form-control">
+          <label>Id:</label>
+          <input
+            placeholder="Id"
+            type="numebr"
+            value={id}
+            onChange={(e) => {
+              setId(e.target.value);
+            }}
+          />
+        </div>
         <div className="form-control">
           <label>Name:</label>
           <input

@@ -21,8 +21,9 @@ export async function updateDog(id, name, image, age, breed, bio) {
   return checkError(resp);
 }
 
-export async function createDog(name, image, age, breed, bio) {
+export async function createDog(id, name, image, age, breed, bio) {
   const resp = await client.from('dogs').insert({
+    id: id,
     name: name,
     image: image,
     age: age,
@@ -32,7 +33,7 @@ export async function createDog(name, image, age, breed, bio) {
   return checkError(resp);
 }
 
-export async function deleteDog(id, name, image, age, breed, bio) {
-  const resp = await client.from('dogs').delete({ id, name, image, age, breed, bio });
+export async function deleteDog(id) {
+  const resp = await client.from('dogs').delete().match({ id: id });
   return checkError(resp);
 }
