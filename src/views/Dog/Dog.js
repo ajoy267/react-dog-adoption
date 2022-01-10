@@ -17,7 +17,7 @@ export default function Dog() {
       setDog(data);
       timer = setTimeout(() => {
         setLoading(false);
-      }, 750);
+      }, 10);
     };
     if (loading) {
       fetchData();

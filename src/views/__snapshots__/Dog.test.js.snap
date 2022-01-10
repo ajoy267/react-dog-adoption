@@ -4,22 +4,29 @@ exports[`should render an individual dog 1`] = `
 <div>
   <div>
     <div>
-      <h2>
-        Franny
-      </h2>
-      <img
-        src="https://placedog.net/500?id=51"
-      />
-      <p>
-        Franny
-         is a(n) 
-        4
-         year old 
-        French Bulldog
-      </p>
-      <p>
-        Sweet Frenchie with lots of love to give.
-      </p>
+      <div>
+        <h2>
+          Charles
+        </h2>
+        <img
+          src="https://placedog.net/800/640?id=206"
+        />
+        <p>
+          Charles
+           is a(n) 
+          7
+           year old 
+          Labrador
+        </p>
+        <p>
+          Charles isn't your typical elderly dog, He enjoys chasing random strangers such as the mailman and bringing you sticks.
+        </p>
+      </div>
+      <a
+        href="/dogs/206/edit"
+      >
+        Edit
+      </a>
     </div>
   </div>
 </div>
