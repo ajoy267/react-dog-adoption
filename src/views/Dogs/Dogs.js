@@ -9,21 +9,13 @@ export default function Dogs() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    let timer;
     const getDogs = async () => {
       const resp = await fetchDogs();
       setDogs(resp);
-      timer = setTimeout(() => {
-        setLoading(false);
-      }, 750);
+      setLoading(false);
     };
-    if (loading) {
-      getDogs();
-    }
-    return () => {
-      clearInterval(timer);
-    };
-  }, [loading]);
+    getDogs();
+  });
   return (
     <>
       {loading && <div className="loader"></div>}

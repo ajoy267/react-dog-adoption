@@ -27,7 +27,12 @@ export default function EditDog() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await updateDog(params.id, id, name, image, age, breed, bio);
+    try {
+      await updateDog(params.id, id, name, image, age, breed, bio);
+      alert('This dog was successfully updated.');
+    } catch (e) {
+      alert('Something went wrong and this dog was not updated.');
+    }
   };
 
   const handleDelete = async (e) => {
