@@ -6,26 +6,18 @@ import DogDetails from '../../components/DogDetails/DogDetails';
 import './Dog.css';
 
 export default function Dog() {
-  const [dog, setDog] = useState([]);
+  const [dog, setDog] = useState({});
   const [loading, setLoading] = useState(true);
-  const params = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
-    let timer;
     const fetchData = async () => {
-      const data = await fetchDogById(params.id);
+      const data = await fetchDogById(id);
       setDog(data);
-      timer = setTimeout(() => {
-        setLoading(false);
-      }, 10);
+      setLoading(false);
     };
-    if (loading) {
-      fetchData();
-    }
-    return () => {
-      clearInterval(timer);
-    };
-  }, [params.id, loading]);
+    fetchData();
+  });
   return (
     <>
       {loading && <div className="loader"></div>}
