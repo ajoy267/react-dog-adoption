@@ -1,14 +1,8 @@
 import { checkError, client } from './client';
 
 export async function fetchDogs() {
-  const resp = await fetch(`${process.env.REACT_APP_SUPABASE_URL}/rest/v1/dogs?`, {
-    headers: {
-      apikey: process.env.REACT_APP_SUPABASE_KEY,
-      Authorization: `Bearer ${process.env.REACT_APP_SUPABASE_KEY}`,
-    },
-  });
-  const data = await resp.json();
-  return data;
+  const resp = await client.from('dogs').select('*');
+  return checkError(resp);
 }
 
 export async function fetchDogById(id) {
@@ -21,9 +15,8 @@ export async function updateDog(id, name, image, age, breed, bio) {
   return checkError(resp);
 }
 
-export async function createDog(id, name, image, age, breed, bio) {
+export async function createDog(name, image, age, breed, bio) {
   const resp = await client.from('dogs').insert({
-    id: id,
     name: name,
     image: image,
     age: age,
