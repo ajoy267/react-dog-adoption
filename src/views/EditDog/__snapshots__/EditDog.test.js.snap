@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render an individual dog 1`] = `
+<div>
+  <div>
+    <h1>
+      Edit Dog
+    </h1>
+    <div
+      class="dog-form"
+    >
+      <form>
+        <h2>
+          Dog Details
+        </h2>
+        <div
+          class="form-control"
+        >
+          <label>
+            Id:
+          </label>
+          <input
+            placeholder="Id"
+            type="numebr"
+            value="206"
+          />
+        </div>
+        <div
+          class="form-control"
+        >
+          <label>
+            Name:
+          </label>
+          <input
+            placeholder="Name"
+            type="text"
+            value="Charles"
+          />
+        </div>
+        <div
+          class="form-control"
+        >
+          <label>
+            Image:
+          </label>
+          <input
+            placeholder="Image URL"
+            type="text"
+            value="https://placedog.net/800/640?id=206"
+          />
+        </div>
+        <div
+          class="form-control"
+        >
+          <label>
+            Age:
+          </label>
+          <input
+            placeholder="Age"
+            type="number"
+            value="7"
+          />
+        </div>
+        <div
+          class="form-control"
+        >
+          <label>
+            Breed:
+          </label>
+          <input
+            placeholder="Breed"
+            type="text"
+            value="Labrador"
+          />
+        </div>
+        <div
+          class="form-control"
+        >
+          <label>
+            Bio:
+          </label>
+          <textarea
+            placeholder="Bio"
+          >
+            Charles isn't your typical elderly dog, He enjoys chasing random strangers such as the mailman and bringing you sticks.
+          </textarea>
+        </div>
+        <div>
+          <button>
+            Save
+          </button>
+        </div>
+        <div>
+          <button>
+            Delete
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
