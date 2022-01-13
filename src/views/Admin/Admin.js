@@ -4,7 +4,6 @@ import DogForm from '../../components/DogForm/DogForm';
 import { createDog, deleteDog } from '../../services/dog';
 
 export default function Admin() {
-  const [id, setId] = useState('');
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
   const [age, setAge] = useState('');
@@ -14,20 +13,21 @@ export default function Admin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await createDog(id, name, image, age, breed, bio);
-    if ((id, name, image, age, breed, bio)) {
+    await createDog(name, image, age, breed, bio);
+    try {
+      await createDog(name, image, age, breed, bio);
       alert('You added a new dog!');
-    } else {
+    } catch (error) {
       alert('Database request has failed, please try again.');
     }
   };
   const handleDelete = async (e) => {
     e.preventDefault();
-    await deleteDog(id);
-    if (id) {
+    try {
+      await deleteDog();
       alert(`You've deleted a dog.`);
       history.push('/');
-    } else {
+    } catch {
       alert(`Database request has failed, please try again.`);
     }
   };
@@ -35,8 +35,6 @@ export default function Admin() {
   return (
     <div>
       <DogForm
-        id={id}
-        setId={setId}
         name={name}
         setName={setName}
         image={image}
